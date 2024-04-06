@@ -1,10 +1,10 @@
-# MTSD
+# CAD
 
-ACL 2021 (Findings) paper: A Multi-Task Learning Framework for Multi-Target Stance Detection.
+paper: Comparative Learning Based Stance Agreement Detection Framework for Multi-Target Stance Detection.
 
 ## Abstract
 
-Multi-target stance detection aims to identify the stance taken toward a pair of different targets from the same text, and typically, there are multiple target pairs per dataset. Existing works generally train one model for each target pair. However, they fail to learn target-specific representations and are prone to overfitting. In this paper, we propose a new training strategy under the multi-task learning setting by training one model on all target pairs, which helps the model learn more universal representations and alleviate overfitting. Moreover, in order to extract more accurate target-specific representations, we propose a multi-task learning network which can jointly train our model with a stance (dis)agreement detection task that is designed to identify agreement and disagreement between stances in paired texts. Experimental results demonstrate that our proposed model outperforms the best-performing baseline by 12.39% in macro-averaged F1-score.
+Multi-target stance detection is the detection of the stance of multiple targets in text. Currently, most multi-target stance detection methods only detect the stance of two targets individually and do not make the two targets complement each other to take full advantage of the relevant semantic information between the two targets. In this paper, we propose a comparative learning based stance agreement detection framework. We applied contrastive learning to stance agreement detection, it enabled the model to learn more information about the features of the target and to strengthen the links between the semantic information of the targets so that they assist each other in stance detection. In addition, we fine-tuned a new model as our encoder to more fully exploit the semantic information between hidden contexts. We also apply joint training as a multi-task learning approach, allowing models to share domain-specific information based on the dataset. By comparing different methods, experimental results show that our method achieves state-of-the-art results on multi-target benchmark datasets. In the concluding sections of our paper, we conducted error analysis experiments on the proposed methodology, elucidating its inherent limitations and furnishing invaluable insights conducive to future enhancements.
 
 ## Run
 
@@ -21,7 +21,7 @@ python train_model.py \
     --train_mode unified \
     --col Stance1 \
     --lr 2e-5 \
-    --batch_size 32 \
+    --batch_size 16 \
     --epochs 20 \
     --dropout 0. \
     --alpha 0.5
@@ -35,7 +35,7 @@ python train_model.py \
     --train_mode adhoc \
     --col Stance2 \
     --lr 2e-5 \
-    --batch_size 32 \
+    --batch_size 16 \
     --epochs 20 \
     --dropout 0. \
     --alpha 0.4
