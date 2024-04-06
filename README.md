@@ -48,4 +48,4 @@ python train_model.py \
 
 ## Contact Info
 
-Please contact Yingjie Li at yli300@uic.edu with any questions.
+Please contact Guantong Liu at lgt@dlmu.edu,cn with any questions.
