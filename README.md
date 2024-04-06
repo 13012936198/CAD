@@ -8,11 +8,11 @@ Multi-target stance detection is the detection of the stance of multiple targets
 
 ## Run
 
-BERTweet is used as our baseline for multi-target stance detection in this paper. First, configure the environment:
+First, configure the environment:
 ```
 $ pip install -r requirements.txt
 ```
-For BERTweet-A in `merged` training setting, run
+For CAD in `merged` training setting, run
 ```
 cd src/
 python train_model.py \
@@ -26,7 +26,7 @@ python train_model.py \
     --dropout 0. \
     --alpha 0.5
 ```
-For BERTweet-A in `adhoc` training setting and target `Hillary Clinton` of target pair `Trump-Clinton`, run
+For CAD in `adhoc` training setting and target `Hillary Clinton` of target pair `Trump-Clinton`, run
 ```
 cd src/
 python train_model.py \
@@ -38,11 +38,9 @@ python train_model.py \
     --batch_size 16 \
     --epochs 20 \
     --dropout 0. \
-    --alpha 0.4
+    --alpha 0.5
 ```
 `input_target` can take one of the following target-pairs [`trump_hillary`, `trump_ted`, `hillary_bernie`] in adhoc setting and take [`all`] in merged setting.
-
-`model_select` includes two options: [`Bertweet` and `Bert`].
 
 `col` indicates the target in each target-pair. For example, for the target-pair `Trump-Clinton`, we have `Stance1` for Trump and `Stance2` for Clinton.
 
