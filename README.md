@@ -21,7 +21,7 @@ python train_model.py \
     --train_mode unified \
     --col Stance1 \
     --lr 2e-5 \
-    --batch_size 16 \
+    --batch_size 32 \
     --epochs 20 \
     --dropout 0. \
     --alpha 0.5
