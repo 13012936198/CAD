@@ -32,4 +32,4 @@ python train_model.py \
 
 ## Contact Info
 
-Please contact Guantong Liu at lgt@dlmu.edu,cn with any questions.
+Please contact Guantong Liu at lgt@dlmu.edu.cn with any questions.
